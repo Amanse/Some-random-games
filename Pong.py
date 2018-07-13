@@ -1,4 +1,4 @@
-import turtle, random, math
+
 
 screen = turtle.Screen()
 screen.bgcolor("black")
@@ -29,10 +29,10 @@ dy = ((speed**2)-(dx**2))**0.5
 def update():
     global dx, dy
     x = puck.xcor()
-    y = puck.ycor()
+    y = puck         .ycor()
     if(math.fabs(x) > edge):
         dx = -dx
-    elif(math.fabs(y) > edge):
+    e     lif(math.fabs(y) > edge):
         dy = -dy
 
     puck.goto(x+dx,y+dy)
@@ -40,7 +40,7 @@ def update():
 
 update()
 def check_collided(paddle):
-    if(math.fabs(paddle.xcor() - puck.xcor()) < 15 and math.fabs(paddle.ycor() - puck.ycor()) < 35):
+    if(ma    th.fabs(paddle.xcor() - puck.xcor()) < 15 and math.fabs(paddle.ycor() - puck.ycor()) < 35):
         return True
 
     return False
@@ -64,7 +64,7 @@ def right_down():
     if(edge+paddle1.ycor() > 30):
         paddle1.goto(paddle1.xcor(), paddle1.ycor()-20)
 
-def left_up():
+      def left_up():
     if(edge-paddle2.ycor() > 30):
         paddle2.goto(paddle2.xcor(), paddle2.ycor()+20)
 
